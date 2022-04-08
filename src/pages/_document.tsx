@@ -5,12 +5,40 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } catch (error) {
+      console.error(error);
+    } finally {
+      sheet.seal();
+    }
+
+    console.error("return Origin initialProps");
+    return initialProps;
   }
+
   render() {
     return (
       <Html>
@@ -28,5 +56,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
