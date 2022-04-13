@@ -20,4 +20,13 @@ export const Container = styled.div`
   top: 360px;
   left: 0;
   z-index: 1;
+
+  .certifying-Shot__banner {
+    padding: 14px 16px 34px;
+
+    & > span {
+      width: 100% !important;
+      height: 80px !important;
+    }
+  }
 `;

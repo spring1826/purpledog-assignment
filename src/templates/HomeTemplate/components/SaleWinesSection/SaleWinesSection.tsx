@@ -2,7 +2,7 @@ import { TimeDealProduct } from "@/components/TimeDealProduct/TimeDealProduct";
 import { Typo } from "@/components/Typo/Typo";
 import { BannerType, SaleWineType } from "@/models/home";
 import Image from "next/image";
-import Link from "next/link";
+
 import { useRouter } from "next/router";
 import * as S from "./SaleWinesSection.style";
 

@@ -23,6 +23,11 @@ export const WineContentContainer = styled.div`
 
   .time-box {
     width: 100%;
+    height: 22px;
+    display: flex;
+    align-items: center;
     background-color: ${(props) => props.theme.Colors.red};
+    padding: 3px 5px;
+    border-radius: 2px;
   }
 `;

@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import { AppBar } from "@/components/AppBar/AppBar";
 import { HomeBannerSwiper } from "@/components/HomeBannerSwiper/HomeBannerSwiper";
 import {
@@ -7,7 +10,6 @@ import {
   SaleWineType,
   WineType,
 } from "@/models/home";
-import { useEffect, useRef } from "react";
 import { RecommendWinesSection } from "./components/RecommendWinesSection/RecommendWinesSection";
 import { SaleWinesSection } from "./components/SaleWinesSection/SaleWinesSection";
 import * as S from "./HomeTemplate.style";
@@ -23,6 +25,7 @@ interface HomeTemplateProps {
 }
 
 export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
+  const router = useRouter();
   // TODO: scroll event로 content가 가려지고 appbar는 흰 배경으로 변경
   const Ref = useRef(null);
   useEffect(() => {}, []);
@@ -45,6 +48,17 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
           subTitle={"와인을 정기 구독중인 회원님에게만 드려요."}
           timeSaleWines={props.timeSaleWines}
         />
+        <div className="certifying-Shot__banner">
+          <Image
+            src={props.certifyingShotBanner[0].thumbnailImageUrl}
+            width={"100%"}
+            height={80}
+            layout="responsive"
+            onClick={() =>
+              router.push(props.certifyingShotBanner[0].thumbnailLinkUrl)
+            }
+          />
+        </div>
       </S.Container>
     </S.Wrapper>
   );
