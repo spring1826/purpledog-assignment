@@ -9,12 +9,15 @@ export const Wrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 2;
   }
+`;
 
-  .recommend-wines__container {
-    width: 100%;
-    position: relative;
-    z-index: 5;
-  }
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 360px;
+  left: 0;
+  z-index: 1;
 `;

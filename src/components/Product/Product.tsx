@@ -38,7 +38,6 @@ interface ProductProps {
 }
 
 export const Product: React.FC<ProductProps> = (props) => {
-  console.log(props.wine);
   return (
     <S.Wrapper>
       <S.ProductThumbnailContainer>

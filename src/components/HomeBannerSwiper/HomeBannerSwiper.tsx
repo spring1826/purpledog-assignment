@@ -10,7 +10,6 @@ interface HomeBannerSwiperProps {
 }
 
 export const HomeBannerSwiper: React.FC<HomeBannerSwiperProps> = (props) => {
-  console.log(props.mainBanner);
   return (
     <S.Wrapper
       slidesPerView={1}

@@ -1,3 +1,9 @@
+import {
+  BannerType,
+  MainContentsType,
+  RecommendedWine,
+  WineType,
+} from "@/models/home";
 import { HomeTemplate } from "@/templates/HomeTemplate/HomeTemplate";
 import axios from "axios";
 import type { NextPage } from "next";
@@ -10,11 +16,23 @@ const Home: NextPage = (props: any) => {
     certifyingShotBanner,
     popularWines,
     mainContents,
+  }: {
+    mainBanner: BannerType[];
+    recommendedWines: RecommendedWine[];
+    timeSaleBanner: BannerType[];
+    certifyingShotBanner: BannerType[];
+    popularWines: WineType[];
+    mainContents: MainContentsType;
   } = props;
+  console.log(recommendedWines);
   return (
     <HomeTemplate
-      mainBanner={mainBanner.results}
-      recommendedWines={popularWines.results}
+      mainBanner={mainBanner}
+      recommendedWines={recommendedWines}
+      timeSaleBanner={timeSaleBanner}
+      certifyingShotBanner={certifyingShotBanner}
+      popularWines={popularWines}
+      mainContents={mainContents}
     />
   );
 };
@@ -52,12 +70,12 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      mainBanner: mainBanner.data,
-      recommendedWines: recommendedWines.data,
-      timeSaleBanner: timeSaleBanner.data,
-      certifyingShotBanner: certifyingShotBanner.data,
-      popularWines: popularWines.data,
-      mainContents: mainContents.data,
+      mainBanner: mainBanner.data.results,
+      recommendedWines: recommendedWines.data.results,
+      timeSaleBanner: timeSaleBanner.data.results,
+      certifyingShotBanner: certifyingShotBanner.data.results,
+      popularWines: popularWines.data.results,
+      mainContents: mainContents.data.results,
     },
   };
 }
