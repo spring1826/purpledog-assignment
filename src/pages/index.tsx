@@ -1,7 +1,8 @@
 import {
   BannerType,
   MainContentsType,
-  RecommendedWine,
+  RecommendedWineType,
+  SaleWineType,
   WineType,
 } from "@/models/home";
 import { HomeTemplate } from "@/templates/HomeTemplate/HomeTemplate";
@@ -15,16 +16,18 @@ const Home: NextPage = (props: any) => {
     timeSaleBanner,
     certifyingShotBanner,
     popularWines,
+    timeSaleWines,
     mainContents,
   }: {
     mainBanner: BannerType[];
-    recommendedWines: RecommendedWine[];
+    recommendedWines: RecommendedWineType[];
     timeSaleBanner: BannerType[];
     certifyingShotBanner: BannerType[];
     popularWines: WineType[];
+    timeSaleWines: SaleWineType[];
     mainContents: MainContentsType;
   } = props;
-  console.log(recommendedWines);
+  console.log(timeSaleWines);
   return (
     <HomeTemplate
       mainBanner={mainBanner}
@@ -32,6 +35,7 @@ const Home: NextPage = (props: any) => {
       timeSaleBanner={timeSaleBanner}
       certifyingShotBanner={certifyingShotBanner}
       popularWines={popularWines}
+      timeSaleWines={timeSaleWines}
       mainContents={mainContents}
     />
   );
@@ -63,6 +67,11 @@ export async function getServerSideProps() {
     `https://796f1d8e-8f52-4549-bad2-c1131d12efa7.mock.pstmn.io/latest/product/subscriptionWineRecommend`,
   );
 
+  // [GET] 타임 세일 영역 API
+  const timeSaleWines = await axios.get(
+    `https://796f1d8e-8f52-4549-bad2-c1131d12efa7.mock.pstmn.io/latest/product/selectTimeSaleWine`,
+  );
+
   // ​[GET] 인기 와인 리스트 API
   const popularWines = await axios.get(
     `https://796f1d8e-8f52-4549-bad2-c1131d12efa7.mock.pstmn.io/latest/product/selectPopularWine`,
@@ -75,6 +84,7 @@ export async function getServerSideProps() {
       timeSaleBanner: timeSaleBanner.data.results,
       certifyingShotBanner: certifyingShotBanner.data.results,
       popularWines: popularWines.data.results,
+      timeSaleWines: timeSaleWines.data.results,
       mainContents: mainContents.data.results,
     },
   };

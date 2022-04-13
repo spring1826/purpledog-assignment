@@ -43,7 +43,7 @@ export type MainContentsType = {
 };
 
 // [GET] 어울리는 와인 조회 API
-export type RecommendedWine = {
+export type RecommendedWineType = {
   productId: number;
   useYn: string;
   viewYn: string;
@@ -75,6 +75,49 @@ export type RecommendedWine = {
   styleNames: string;
   dryNames: string;
   productOnSales: boolean;
+};
+
+// [GET] 타임 세일 영역 API
+export type SaleWineType = {
+  acidity: number;
+  alc: number;
+  body: number;
+  bubble: number;
+  categoryId: number;
+  countryId: number;
+  countryName: string;
+  description: string;
+  discountPercent: number;
+  discountPrice: number;
+  dry: number;
+  dryNames: string;
+  englishName: string;
+  name: string;
+  overall: number;
+  pointDescription: string;
+  productCode: string;
+  productId: number;
+  productOnSales: true;
+  productUrl: string;
+  regionId: number;
+  regionName: string;
+  salesPrice: number;
+  statusCode: string;
+  statusCodeName: string;
+  styleNames: string;
+  subscriptionYn: string;
+  tannins: number;
+  taxYn: string;
+  thumbnailImageUrl: string;
+  timeSaleDiscountPercent: number;
+  timeSaleEndDate: string;
+  timeSalePrice: number;
+  timeSaleStartDate: string;
+  title: string;
+  useYn: string;
+  viewYn: string;
+  weight: number;
+  wineryName: string;
 };
 
 // ​[GET] 인기 와인 리스트 API

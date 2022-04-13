@@ -1,40 +1,10 @@
+import { RecommendedWine } from "@/models/home";
 import Image from "next/image";
 import { Typo } from "../Typo/Typo";
 import * as S from "./Product.style";
 
-// TODO: type별로 분리 필요
-type wineProps = {
-  acidity: number;
-  alc: number;
-  body: number;
-  bubble: number;
-  countryId: number;
-  countryName: string;
-  description: string;
-  drinkingTemp: number;
-  dry: number;
-  dryNames: string;
-  englishName: string;
-  grapeEnglishName: string;
-  grapeName: string;
-  name: string;
-  originName: string;
-  overall: number;
-  pointDescription: string;
-  productCode: string;
-  productId: number;
-  regionId: number;
-  regionName: string;
-  salesPrice: number;
-  styleNames: string;
-  tannins: number;
-  thumbnailImageUrl: string;
-  wineTypeCode: string;
-  wineTypeName: string;
-};
-
 interface ProductProps {
-  wine: wineProps;
+  wine: RecommendedWine;
 }
 
 export const Product: React.FC<ProductProps> = (props) => {
@@ -58,11 +28,11 @@ export const Product: React.FC<ProductProps> = (props) => {
             &#183;{" "}
           </Typo>
           <Typo fontSize="M_11PX" color="gray_3">
-            {props.wine.wineTypeName}
+            {props.wine.styleNames}
           </Typo>
         </div>
         <div className="wine-name">
-          <Typo fontSize="M_13PX">{props.wine.name}</Typo>
+          <Typo fontSize="M_13PX">{props.wine.wineryName}</Typo>
         </div>
         <div>
           <Typo fontSize="M_16PX" weight={700}>

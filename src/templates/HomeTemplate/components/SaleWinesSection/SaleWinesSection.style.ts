@@ -4,12 +4,11 @@ export const Wrapper = styled.div`
   width: 100%;
   padding: 16px;
 
-  .banner__container {
-    width: 100%;
-    max-height: 80px;
-    border-radius: 5px;
-    background-color: red;
-    object-fit: contain;
-    margin: 15px;
+  .time-sale__banner {
+    margin: 15px 0;
+    & > span {
+      width: 100% !important;
+      height: 80px !important;
+    }
   }
 `;
