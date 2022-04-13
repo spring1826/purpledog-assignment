@@ -11,4 +11,10 @@ export const Wrapper = styled.div`
     left: 0;
     z-index: 5;
   }
+
+  .recommend-wines__container {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+  }
 `;
