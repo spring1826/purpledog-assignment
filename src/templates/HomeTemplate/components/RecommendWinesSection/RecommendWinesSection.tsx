@@ -33,7 +33,15 @@ export const RecommendWinesSection: React.FC<RecommendWinesSectionProps> = (
         {props.wineList.map((wine, index) => {
           return (
             <SwiperSlide key={index}>
-              <Product wine={wine} />
+              <Product
+                size="S"
+                thumbnailImageUrl={wine.thumbnailImageUrl}
+                countryName={`${wine.countryName} · ${wine.styleNames}`}
+                wineryName={wine.wineryName}
+                price={`${wine.salesPrice.toLocaleString()}원`}
+                percent={"0%"}
+                salePrice={`${wine.salesPrice.toLocaleString()}원`}
+              />
             </SwiperSlide>
           );
         })}

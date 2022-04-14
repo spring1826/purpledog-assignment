@@ -13,6 +13,9 @@ import {
 import { RecommendWinesSection } from "./components/RecommendWinesSection/RecommendWinesSection";
 import { SaleWinesSection } from "./components/SaleWinesSection/SaleWinesSection";
 import * as S from "./HomeTemplate.style";
+import { CountryWinesSection } from "./components/CountryWinesSection/CountryWinesSection";
+import { ExhibitionSection } from "./components/ExhibitionSection/ExhibitionSection";
+import { PopularWinesSection } from "./components/PopularWinesSection/PopularWinesSection";
 
 interface HomeTemplateProps {
   mainBanner: BannerType[];
@@ -29,6 +32,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   // TODO: scroll event로 content가 가려지고 appbar는 흰 배경으로 변경
   const Ref = useRef(null);
   useEffect(() => {}, []);
+  console.log(props.mainContents);
   return (
     <S.Wrapper>
       <div className="app--bar__container">
@@ -59,6 +63,19 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
             }
           />
         </div>
+        <CountryWinesSection
+          title={props.mainContents.COUNTRY_WINE_TITLE.content}
+          subTitle={props.mainContents.COUNTRY_WINE__DESCRIPTION.content}
+        />
+        <ExhibitionSection
+          title={props.mainContents.RECOMMEND_PRODUCT_2_TITLTE.content}
+          subTitle={props.mainContents.RECOMMEND_PRODUCT_2_DESCRIPTION.content}
+        />
+        <PopularWinesSection
+          title={props.mainContents.RECOMMEND_PRODUCT_2_TITLTE.content}
+          subTitle={props.mainContents.RECOMMEND_PRODUCT_2_DESCRIPTION.content}
+          popularWines={props.popularWines}
+        />
       </S.Container>
     </S.Wrapper>
   );

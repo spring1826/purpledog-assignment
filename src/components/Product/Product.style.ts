@@ -1,13 +1,12 @@
-import Link from "next/link";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const ProductThumbnailContainer = styled.div`
-  width: 140px;
-  height: 168px;
+export const ProductThumbnailContainer = styled.div<{ size: "S" | "M" }>`
+  width: ${(props) => (props.size === "S" ? "140px" : "167px")};
+  height: ${(props) => (props.size === "S" ? "168px" : "198px")};
   border-radius: 6px;
   background-color: ${(props) => props.theme.Colors.gray_1};
 `;

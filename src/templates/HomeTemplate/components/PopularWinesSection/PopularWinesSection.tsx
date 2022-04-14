@@ -1,9 +1,12 @@
+import { Product } from "@/components/Product/Product";
 import { Typo } from "@/components/Typo/Typo";
+import { WineType } from "@/models/home";
 import * as S from "./PopularWinesSection.style";
 
 interface PopularWinesSectionProps {
   title: string;
   subTitle: string;
+  popularWines: WineType[];
 }
 
 export const PopularWinesSection: React.FC<PopularWinesSectionProps> = (
@@ -21,6 +24,22 @@ export const PopularWinesSection: React.FC<PopularWinesSectionProps> = (
           {props.subTitle}
         </Typo>
       </div>
+      <S.Container>
+        {props.popularWines.map((wine, index) => {
+          return (
+            <Product
+              key={index}
+              size={"M"}
+              thumbnailImageUrl={wine.thumbnailImageUrl}
+              countryName={`${wine.countryName} · ${wine.styleNames}`}
+              wineryName={wine.wineTypeName}
+              price={`${wine.salesPrice.toLocaleString()}원`}
+              percent={`0%`}
+              salePrice={`${wine.salesPrice.toLocaleString()}원`}
+            />
+          );
+        })}
+      </S.Container>
     </S.Wrapper>
   );
 };
