@@ -12,10 +12,11 @@ import {
 } from "@/models/home";
 import { RecommendWinesSection } from "./components/RecommendWinesSection/RecommendWinesSection";
 import { SaleWinesSection } from "./components/SaleWinesSection/SaleWinesSection";
-import * as S from "./HomeTemplate.style";
 import { CountryWinesSection } from "./components/CountryWinesSection/CountryWinesSection";
 import { ExhibitionSection } from "./components/ExhibitionSection/ExhibitionSection";
 import { PopularWinesSection } from "./components/PopularWinesSection/PopularWinesSection";
+import { GNB } from "@/components/GNB/GNB";
+import * as S from "./HomeTemplate.style";
 
 interface HomeTemplateProps {
   mainBanner: BannerType[];
@@ -76,6 +77,7 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
           subTitle={props.mainContents.RECOMMEND_PRODUCT_2_DESCRIPTION.content}
           popularWines={props.popularWines}
         />
+        <GNB />
       </S.Container>
     </S.Wrapper>
   );

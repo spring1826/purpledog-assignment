@@ -1,3 +1,4 @@
+import { GNB } from "@/components/GNB/GNB";
 import {
   BannerType,
   MainContentsType,
