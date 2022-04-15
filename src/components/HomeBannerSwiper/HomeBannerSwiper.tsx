@@ -1,9 +1,9 @@
+import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
-import * as S from "./HomeBannerSwiper.style";
 import { Pagination } from "swiper";
+import * as S from "./HomeBannerSwiper.style";
 import "swiper/css";
 import "swiper/css/pagination";
-import Image from "next/image";
 
 interface HomeBannerSwiperProps {
   mainBanner: any[];
