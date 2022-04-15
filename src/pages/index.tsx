@@ -33,7 +33,6 @@ const Home: NextPage = (props: any) => {
     timeSaleWines: SaleWineType[];
     mainContents: MainContentsType;
   } = props;
-  console.log("mainBanner", mainBanner);
   return (
     <HomeTemplate
       mainBanner={mainBanner}
@@ -72,12 +71,12 @@ export async function getServerSideProps() {
   return {
     props: {
       mainBanner: mainBanner.results,
-      recommendedWines: recommendedWines.data.results,
-      timeSaleBanner: timeSaleBanner.data.results,
-      certifyingShotBanner: certifyingShotBanner.data.results,
-      popularWines: popularWines.data.results,
-      timeSaleWines: timeSaleWines.data.results,
-      mainContents: mainContents.data.results,
+      recommendedWines: recommendedWines.results,
+      timeSaleBanner: timeSaleBanner.results,
+      certifyingShotBanner: certifyingShotBanner.results,
+      popularWines: popularWines.results,
+      timeSaleWines: timeSaleWines.results,
+      mainContents: mainContents.results,
     },
   };
 }
