@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { AppBar } from "@/components/AppBar/AppBar";
-import { HomeBannerSwiper } from "@/components/HomeBannerSwiper/HomeBannerSwiper";
+import { HomeBannerSwiper } from "@/templates/HomeTemplate/components/HomeBannerSwiper/HomeBannerSwiper";
 import {
   BannerType,
   MainContentsType,
@@ -31,9 +31,7 @@ interface HomeTemplateProps {
 export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   const router = useRouter();
   // TODO: scroll event로 content가 가려지고 appbar는 흰 배경으로 변경
-  const Ref = useRef(null);
-  useEffect(() => {}, []);
-  console.log(props.mainContents);
+
   return (
     <S.Wrapper>
       <div className="app--bar__container">
