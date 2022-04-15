@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
 
   .time-sale__banner {
     margin: 15px 0;
+    cursor: pointer;
+
     & > span {
       width: 100% !important;
       height: 80px !important;

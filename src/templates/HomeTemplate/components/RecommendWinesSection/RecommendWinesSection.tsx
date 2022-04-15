@@ -28,7 +28,6 @@ export const RecommendWinesSection: React.FC<RecommendWinesSectionProps> = (
           {props.subTitle}
         </Typo>
       </div>
-      {/* TODO: swiper컴포넌트 분리 */}
       <S.WineListContainer slidesPerView={2.5} spaceBetween={10}>
         {props.wineList.map((wine, index) => {
           return (

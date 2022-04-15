@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 16px;
 
+  .icon {
+    cursor: pointer;
+  }
+
   .user--interfacr__container {
     display: flex;
     align-items: center;

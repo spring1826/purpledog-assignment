@@ -29,12 +29,12 @@ export const CountryWinesSection: React.FC<CountryWinesSectionProps> = (
         </Typo>
       </div>
       <S.Container>
-        <Image src={FranceIMG} />
-        <Image src={ItalyIMG} />
-        <Image src={USAIMG} />
-        <Image src={PortugalIMG} />
-        <Image src={AustraliaIMG} />
-        <Image src={SpainIMG} />
+        <Image src={FranceIMG} className="country__link" />
+        <Image src={ItalyIMG} className="country__link" />
+        <Image src={USAIMG} className="country__link" />
+        <Image src={PortugalIMG} className="country__link" />
+        <Image src={AustraliaIMG} className="country__link" />
+        <Image src={SpainIMG} className="country__link" />
       </S.Container>
     </S.Wrapper>
   );

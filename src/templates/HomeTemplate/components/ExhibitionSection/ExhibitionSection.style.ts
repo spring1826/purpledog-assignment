@@ -13,5 +13,6 @@ export const Wrapper = styled.div`
   .image__container {
     width: 100%;
     padding-top: 15px;
+    cursor: pointer;
   }
 `;

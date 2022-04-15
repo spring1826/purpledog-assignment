@@ -11,11 +11,11 @@ interface GNBProps {}
 export const GNB: React.FC<GNBProps> = (props) => {
   return (
     <S.Wrapper>
-      <Image src={HomeIcon} />
-      <Image src={MagazineIcon} />
-      <Image src={CategoryIcon} />
-      <Image src={FeedIcon} />
-      <Image src={MypageIcon} />
+      <Image src={HomeIcon} className="icon" />
+      <Image src={MagazineIcon} className="icon" />
+      <Image src={CategoryIcon} className="icon" />
+      <Image src={FeedIcon} className="icon" />
+      <Image src={MypageIcon} className="icon" />
     </S.Wrapper>
   );
 };

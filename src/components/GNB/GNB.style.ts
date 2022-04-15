@@ -8,4 +8,8 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   box-shadow: 0px -3px 30px ${(props) => props.theme.Colors.gray_3};
   margin-top: 20px;
+
+  .icon {
+    cursor: pointer;
+  }
 `;
