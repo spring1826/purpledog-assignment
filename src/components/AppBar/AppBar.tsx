@@ -13,13 +13,13 @@ interface AppBarProps extends HTMLAttributes<HTMLDivElement> {
 export const AppBar: React.FC<AppBarProps> = (props) => {
   return (
     <S.Wrapper>
-      <Image src={SearchIcon} />
+      <Image src={SearchIcon} className="icon" />
       <div className="user--interfacr__container">
-        <div className="alarm__container">
+        <div className="alarm__container icon">
           <Image src={AlarmIcon} />
           <div className="dot" />
         </div>
-        <div className="cart__container">
+        <div className="cart__container icon">
           <Image src={CartIcon} />
           <Typo className="cart-count" fontSize="M_10PX" color="white">
             {props.cartCount ?? 14}

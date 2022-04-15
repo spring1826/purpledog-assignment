@@ -23,6 +23,7 @@ export const Container = styled.div`
 
   .certifying-Shot__banner {
     padding: 14px 16px 34px;
+    cursor: pointer;
 
     & > span {
       width: 100% !important;

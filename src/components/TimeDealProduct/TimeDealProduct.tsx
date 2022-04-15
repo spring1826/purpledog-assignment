@@ -20,6 +20,7 @@ export const TimeDealProduct: React.FC<TimeDealProductProps> = (props) => {
             src={props.wine.thumbnailImageUrl}
             width={"100%"}
             height={"100%"}
+            layout="responsive"
           />
         </S.WineThumbnailContainer>
         <S.WineContentContainer>

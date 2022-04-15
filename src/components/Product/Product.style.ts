@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
+  cursor: pointer;
 `;
 
 export const ProductThumbnailContainer = styled.div<{ size: "S" | "M" }>`
@@ -9,6 +10,7 @@ export const ProductThumbnailContainer = styled.div<{ size: "S" | "M" }>`
   height: ${(props) => (props.size === "S" ? "168px" : "198px")};
   border-radius: 6px;
   background-color: ${(props) => props.theme.Colors.gray_1};
+  padding-top: 12px;
 `;
 
 export const ProductContentContainer = styled.div`

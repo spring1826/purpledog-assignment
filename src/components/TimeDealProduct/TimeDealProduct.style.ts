@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export const WineThumbnailContainer = styled.div`
@@ -11,6 +12,7 @@ export const WineThumbnailContainer = styled.div`
   height: 132px;
   background-color: ${(props) => props.theme.Colors.gray_1};
   border-radius: 5px;
+  padding-top: 12px;
 `;
 
 export const WineContentContainer = styled.div`
@@ -22,7 +24,7 @@ export const WineContentContainer = styled.div`
   }
 
   .time-box {
-    width: 100%;
+    width: fit-content;
     height: 22px;
     display: flex;
     align-items: center;
